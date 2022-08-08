@@ -1,21 +1,52 @@
-@extends('user.layouts.main')
+@extends('admin.layouts.main')
 
 @section('content')
-  <!-- Begin Site Title -->
-  <div class="container">
-    <div class="mainheading">
-      <h1 class="sitetitle">Sistem Informasi Indekos Dekat ITENAS</h1>
-    </div>
-    <!-- End Site Title -->
+    <main class="content flex-fill">
+      <section>
+        <button
+          aria-controls="sidebar"
+          data-bs-toggle="offcanvas"
+          data-bs-target=".sidebar"
+          aria-label="Button Hamburger"
+          class="sidebarOffcanvas mb-5 btn p-0 border-0 d-flex d-lg-none"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="nav-content gap-5">
+          <div class="d-flex gap-3 align-items-center">
+            <img
+              src="/assets/images/photo.webp"
+              alt="Photo Profile"
+              class="photo-profile"
+            />
+            <div>
+              <p class="title-content mb-2">Welcome back, Admin!</p>
+            </div>
+          </div>
+          <div class="search-wrapper">
+            <div class="search-bar flex-fill">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Cari Kosan"
+              />
+            </div>
+          </div>
+        </nav>
+      </section>
 
       <section class="d-flex flex-column gap-4">
         <div class="d-flex justify-content-between align-items-center gap-3">
           <h4 class="title-section-content">Daftar Kost</h4>
+          <a class="btn btn-primary" href="/admin/create">
+            <i class="bi bi-plus-circle"></i>
+            Tambah Kost
+          </a>
         </div>
         <div class="d-flex gap-4 flex-wrap">
           <div class="row">
             @foreach ($kosans as $kosan)
-            <div class="col-md-3 mb-3">
+            <div class="col-md-4 mb-3">
               <div class="product-card">
                 <img
                   src="https://source.unsplash.com/1200x400?house"
@@ -47,5 +78,5 @@
           </div>
       </section>
       {{$kosans->links()}}
-  </div>
+    </main>
 @endsection

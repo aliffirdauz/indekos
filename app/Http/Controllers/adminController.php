@@ -15,8 +15,8 @@ class adminController extends Controller
      */
     public function index()
     {
-        return view('admin.index', [
-            'kosans' => Kosan::all(),
+        return view('admin.kosan.index', [
+            'kosans' => Kosan::latest()->paginate(12),
             'pemiliks' => Pemilik::all()
         ]);
     }
@@ -28,7 +28,9 @@ class adminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.kosan.create', [
+            'pemiliks' => Pemilik::all()
+        ]);
     }
 
     /**

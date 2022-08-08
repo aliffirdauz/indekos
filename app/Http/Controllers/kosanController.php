@@ -16,7 +16,7 @@ class kosanController extends Controller
     public function index()
     {
         return view('user.home.index', [
-            'kosans' => Kosan::latest()->paginate(6),
+            'kosans' => Kosan::latest()->paginate(12),
             'pemiliks' => Pemilik::all()
         ]);
     }

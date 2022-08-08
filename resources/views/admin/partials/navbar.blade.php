@@ -34,7 +34,7 @@
             </svg>
             <p>Daftar Kosan</p>
           </a>
-          <a href="#" class="item-menu" onclick="handleClickMenu(this)">
+          <!-- <a href="#" class="item-menu" onclick="handleClickMenu(this)">
             <svg fill="currentColor">
               <mask id="path-1-inside-1_1_101" fill="white">
                 <path
@@ -49,7 +49,7 @@
             </svg>
             <p>KosanKu</p>
           </a>
-          <a href="#" class="item-menu" onclick="handleClickMenu(this)">
+          <a href="/admin/create" class="item-menu {{ request()->segment(1) == 'admin' ? 'active' : '' }}" onclick="handleClickMenu(this)">
             <svg fill="none">
               <path
                 fill-rule="evenodd"
@@ -133,10 +133,10 @@
             <p>Account Settings</p>
           </a>
         </div>
-      </nav>
+      </nav> -->
       <footer>
         <div class="d-flex gap-3 align-items-center mb-4">
-          <img src="./assets/icons/ic_mode.svg" alt="Mode Display" />
+          <img src="/assets/icons/ic_mode.svg" alt="Mode Display" />
           <p id="label-mode" class="flex-fill label-mode">Light Mode</p>
           <div>
             <input
@@ -147,14 +147,14 @@
             />
             <label for="checkbox" class="label-toggle">
               <img
-                src="./assets/icons/ic_moon.svg"
+                src="/assets/icons/ic_moon.svg"
                 width="50%"
                 class="ic-theme"
                 id="ic-dark"
                 alt="Icon Dark"
               />
               <img
-                src="./assets/icons/ic_sun.svg"
+                src="/assets/icons/ic_sun.svg"
                 width="50%"
                 class="ic-theme"
                 id="ic-light"
