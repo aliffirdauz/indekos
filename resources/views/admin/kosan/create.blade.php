@@ -144,14 +144,14 @@
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
-                <div class="form-group mb-3">
+                <!-- <div class="form-group mb-3">
                     <label for="status" class="form-label">Status Kamar</label>
                     <select class="form-select" aria-label="Status Kamar">
                         <option selected>Pilih Status Kamar</option>
                         <option value="Tersedia">Tersedia</option>
                         <option value="Tidak Tersedia">Tidak Tersedia</option>
                     </select>
-                </div>
+                </div> -->
                 <div>
                     <a class="btn btn-secondary mt-3 me-2" href="/admin">Kembali</a>
                     <button type="submit" value="submit" class="btn btn-primary mt-3">Tambah Kost</button>

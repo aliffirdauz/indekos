@@ -32,7 +32,7 @@
                 <div class="product-detail pt-4">
                   <div>
                     <p class="label-detail mb-1">Harga:</p>
-                    <p class="price-detail">Rp {{$kosan->harga}}</p>
+                    <p class="price-detail">Rp {{number_format($kosan->harga)}}/bulan</p>
                   </div>
                   <button
                     class="buy-product button btn-rounded active"
