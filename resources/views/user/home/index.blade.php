@@ -25,7 +25,7 @@
                 />
                 <div class="product-detail pt-3">
                   <div>
-                    <p class="label-detail mb-1">{{$kosan->jenis}}</p>
+                    <p class="label-detail mb-1">Kost {{$kosan->jenis}}</p>
                     <p class="title-detail">{{$kosan->nama_kosan}}</p>
                   </div>
                 </div>

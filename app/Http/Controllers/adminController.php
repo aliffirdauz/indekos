@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Kosan;
 use App\Models\Pemilik;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
 
 class adminController extends Controller
 {
@@ -41,7 +43,29 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'pemilik_id' => 'required',
+            'nama_kosan' => 'required',
+            'alamat' => 'required',
+            'harga' => 'required',
+            'kapasitas' => 'required',
+            'jenis' => 'required',
+            'foto' => ['nullable', 'image', 'file', 'max:5120'],
+            'deskripsi' => 'required',
+            'fasilitas_kamar' => 'required',
+            'fasilitas_kamar_mandi' => 'required',
+            'fasilitas_umum' => 'required',
+            'fasilitas_parkir' => 'required',
+            'peraturan' => 'required',
+        ]);
+
+        if($request->file('foto')){
+            $validatedData['foto'] = $request->file('foto')->store('user-foto-kost');
+        }
+
+        Kosan::create($validatedData);
+
+        return redirect('/admin')->with('success', 'Kost berhasil ditambahkan!');
     }
 
     /**

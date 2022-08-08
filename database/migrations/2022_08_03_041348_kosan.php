@@ -28,7 +28,6 @@ return new class extends Migration
             $table->string('fasilitas_umum');
             $table->string('fasilitas_parkir');
             $table->string('peraturan');
-            $table->string('status');
             $table->timestamps();
         });
     }

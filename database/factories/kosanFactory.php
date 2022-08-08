@@ -30,7 +30,6 @@ class kosanFactory extends Factory
             'fasilitas_umum' => $this->faker->text,
             'fasilitas_parkir' => $this->faker->text,
             'peraturan' => $this->faker->text,
-            'status' => $this->faker->randomElement(['Tersedia', 'Tidak Tersedia']),
         ];
     }
 }
