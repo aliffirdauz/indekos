@@ -53,15 +53,15 @@
           </span>
         </div>
         <h4 class="mt-4">Fasilitas Kamar</h4>
-        <p>{{$kosans->fasilitas_kamar}}</p>
+        <p>{!! $kosans->fasilitas_kamar !!}</p>
         <h4 class="mt-4">Fasilitas Kamar Mandi</h4>
-        <p>{{$kosans->fasilitas_kamar_mandi}}</p>
+        <p>{!! $kosans->fasilitas_kamar_mandi !!}</p>
         <h4 class="mt-4">Fasilitas Umum</h4>
-        <p>{{$kosans->fasilitas_umum}}</p>
+        <p>{!! $kosans->fasilitas_umum !!}</p>
         <h4 class="mt-4">Fasilitas Parikir</h4>
-        <p>{{$kosans->fasilitas_parkir}}</p>
+        <p>{!! $kosans->fasilitas_parkir !!}</p>
         <h4 class="mt-4">Peraturan</h4>
-        <p>{{$kosans->peraturan}}</p>
+        <p>{!! $kosans->peraturan !!}</p>
       </div>
     </section>
 

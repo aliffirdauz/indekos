@@ -30,11 +30,11 @@
             <div class="d-flex justify-content-between align-items-center gap-3">
                 <h4 class="title-section-content">Tambah Kost</h4>
             </div>
-            <form action="/admin" method="POST" class="needs-validation" novalidate>
+            <form action="/admin" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-3">
                 <label for="pemilik_id" class="form-label">Nama Pemilik Kost</label>
-                <select class="form-select" aria-label="Pemilik Kost">
+                <select class="form-select" name="pemilik_id" aria-label="Pemilik Kost">
                     <option selected>Pilih Pemilik Kost</option>
                     @foreach ($pemiliks as $pemilik)
                         <option value="{{ $pemilik->id }}">{{ $pemilik->nama_pemilik }}</option>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="jenis" class="form-label">Jenis Kost</label>
-                    <select class="form-select" aria-label="Jenis Kost">
+                    <select class="form-select" name="jenis" aria-label="Jenis Kost">
                         <option selected>Pilih Jenis Kost</option>
                         <option value="Putra">Putra</option>
                         <option value="Putri">Putri</option>
@@ -95,7 +95,7 @@
                             {{ $message }}
                         </div>
                     @enderror
-                    </div>
+                </div>
                 <div class="form-group mb-3">
                     <label for="deskripsi">Deskripsi Kost</label>
                     <input id="deskripsi" type="hidden" name="deskripsi" value="{{ old('deskripsi') }}">

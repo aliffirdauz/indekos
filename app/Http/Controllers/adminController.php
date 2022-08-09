@@ -43,6 +43,7 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $validatedData = $request->validate([
             'pemilik_id' => 'required',
             'nama_kosan' => 'required',

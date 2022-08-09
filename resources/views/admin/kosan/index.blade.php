@@ -48,12 +48,11 @@
             @foreach ($kosans as $kosan)
             <div class="col-md-4 mb-3">
               <div class="product-card">
-                <img
-                  src="https://source.unsplash.com/1200x400?house"
-                  alt="Kosan"
-                  width="260"
-                  height="180"
-                />
+                @if ($kosan->foto)
+                  <img src="{{ asset('storage/' . $kosan->foto) }}" alt="{{ $kosan->foto }}" class="img-fluid"  width="260" height="180">
+                @else
+                  <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="260" height="180">
+                @endif
                 <div class="product-detail pt-3">
                   <div>
                     <p class="label-detail mb-1">{{$kosan->jenis}}</p>
@@ -63,7 +62,7 @@
                 <div class="product-detail pt-4">
                   <div>
                     <p class="label-detail mb-1">Harga:</p>
-                    <p class="price-detail">Rp {{$kosan->harga}}</p>
+                    <p class="price-detail">Rp {{number_format($kosan->harga)}}</p>
                   </div>
                   <button
                     class="buy-product button btn-rounded active"

@@ -23,7 +23,6 @@ class kosanFactory extends Factory
             'harga' => $this->faker->numberBetween(500000, 1000000),
             'kapasitas' => $this->faker->numberBetween(1, 10),
             'jenis' => $this->faker->randomElement(['Putra', 'Putri','Putra/Putri']),
-            'foto' => $this->faker->imageUrl(300, 300),
             'deskripsi' => $this->faker->text,
             'fasilitas_kamar' => $this->faker->text,
             'fasilitas_kamar_mandi' => $this->faker->text,
