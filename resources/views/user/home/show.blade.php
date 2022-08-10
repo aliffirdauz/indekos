@@ -16,11 +16,18 @@
       <div class="container">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-        @foreach ($fotos as $f)
           <div class="carousel-item active">
-            <img src="{{ asset('assets/images').'/'.$f->nama_file}}" class="d-block w-100" alt="...">
+            @if ($kosans->foto)
+              <img src="{{ asset('assets/images'.'/'. $kosans->foto) }}" alt="Foto Kosan" class="img-fluid"  width="2048" height="768">
+            @else
+              <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="2048" height="768">
+            @endif
           </div>
-        @endforeach
+          @foreach ($fotos as $f)
+            <div class="carousel-item">
+              <img src="{{ asset('assets/images').'/'.$f->nama_file}}" class="d-block w-100" alt="...">
+            </div>
+          @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -51,6 +51,7 @@ class kosanController extends Controller
     public function show($nama_kosan)
     {
         $kosan = Kosan::where('nama_kosan', $nama_kosan)->first();
+        $kosans = Kosan::all();
         return view('user.home.show', [
             'kosans' => Kosan::where('nama_kosan', $nama_kosan)->first(),
             'fotos' => foto_kosan::where('kosan_id', $kosan->id)->get()

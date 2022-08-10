@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-
+    
 @section('content')
     <main class="content flex-fill">
       <section>
@@ -48,7 +48,7 @@
             @foreach ($kosans as $kosan)
             <div class="col-md-4 mb-3">
               <div class="product-card">
-                  <img src="{{ asset('assets/images'.'/'. $kosan->foto) }}" alt="Foto Kosan" class="img-fluid"  width="2048" height="768">
+                  <img src="{{ asset('assets/images'.'/'. $kosan->foto) }}" alt="Foto Kosan" class="img-fluid" width="2048" height="768">
                 <div class="product-detail pt-3">
                   <div>
                     <p class="label-detail mb-1">{{$kosan->jenis}}</p>
