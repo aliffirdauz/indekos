@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pemiliks', function (Blueprint $table) {
+        Schema::create('foto_kosans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_pemilik');
-            $table->string('email');
-            $table->string('password');
-            $table->string('alamat');
-            $table->string('no_hp');
-            $table->string('foto');
+            $table->foreignId('kosan_id');
+            $table->string('nama_file');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemilik');
+        Schema::dropIfExists('foto_kosans');
     }
 };

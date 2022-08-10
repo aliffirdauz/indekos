@@ -7,6 +7,7 @@ use App\Models\Pemilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Models\foto_kosan;
 
 class adminController extends Controller
 {
@@ -17,9 +18,9 @@ class adminController extends Controller
      */
     public function index()
     {
+        // dd(Kosan::all());
         return view('admin.kosan.index', [
             'kosans' => Kosan::latest()->paginate(12),
-            'pemiliks' => Pemilik::all()
         ]);
     }
 
@@ -31,7 +32,7 @@ class adminController extends Controller
     public function create()
     {
         return view('admin.kosan.create', [
-            'pemiliks' => Pemilik::all()
+
         ]);
     }
 
@@ -45,7 +46,6 @@ class adminController extends Controller
     {
         // return $request;
         $validatedData = $request->validate([
-            'pemilik_id' => 'required',
             'nama_kosan' => 'required',
             'alamat' => 'required',
             'harga' => 'required',
@@ -112,5 +112,29 @@ class adminController extends Controller
     public function destroy(Kosan $kosan)
     {
         //
+    }
+    public function upload_image(Request $request, $kosan_id)
+    {
+        // dd($kosan_id);
+        return view('admin.kosan.upimage',compact('kosan_id'));
+    }
+    public function store_image(Request $request, $kosan_id)
+    {
+        $path = public_path("assets/images/");
+        $image_name = '';
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $image_name = $file->getClientOriginalName();
+            $file->move($path, $image_name);
+            $galeri = new foto_kosan();
+            $galeri->nama_file = $image_name;
+            $galeri->kosan_id = $kosan_id;
+            $kosan = Kosan::where('id', $kosan_id)->first();
+            if(empty($kosan->foto)){
+                Kosan::where('id', $kosan_id)->update(['foto' => $image_name]);
+            }
+            $galeri->save();
+        }
+        return response()->json(['success' => $image_name]);
     }
 }

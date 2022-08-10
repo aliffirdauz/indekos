@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class Kosan extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $table = 'kosans';
+    protected $guarded = [];
+    protected $primaryKey = 'id';
 
     public function pemilik()
     {

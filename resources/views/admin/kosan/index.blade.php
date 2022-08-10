@@ -48,27 +48,30 @@
             @foreach ($kosans as $kosan)
             <div class="col-md-4 mb-3">
               <div class="product-card">
-                @if ($kosan->foto)
-                  <img src="{{ asset('storage/' . $kosan->foto) }}" alt="{{ $kosan->foto }}" class="img-fluid"  width="260" height="180">
-                @else
-                  <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="260" height="180">
-                @endif
+                  <img src="{{ asset('assets/images'.'/'. $kosan->foto) }}" alt="Foto Kosan" class="img-fluid"  width="1024" height="768">
                 <div class="product-detail pt-3">
                   <div>
                     <p class="label-detail mb-1">{{$kosan->jenis}}</p>
-                    <p class="title-detail">{{$kosan->nama_kosan}}</p>
+                    <p class="title-detail text__limit">{{$kosan->nama_kosan}}
+                    </p>
                   </div>
                 </div>
                 <div class="product-detail pt-4">
-                  <div>
+                  <!-- <div>
                     <p class="label-detail mb-1">Harga:</p>
                     <p class="price-detail">Rp {{number_format($kosan->harga)}}</p>
-                  </div>
+                  </div> -->
                   <button
                     class="buy-product button btn-rounded active"
                     onclick="handleBuy(this)"
                   >
                     <a href="/post/{{$kosan->nama_kosan}}" class="text-white text-decoration-none">Lihat</a>
+                  </button>
+                  <button
+                    class="buy-product button btn-rounded active"
+                    onclick="handleBuy(this)"
+                  >
+                    <a href="/upload/{{$kosan->id}}" class="text-white text-decoration-none">Unggah Gambar</a>
                   </button>
                 </div>
               </div>

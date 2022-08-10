@@ -33,15 +33,6 @@
             <form action="/admin" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-3">
-                <label for="pemilik_id" class="form-label">Nama Pemilik Kost</label>
-                <select class="form-select" name="pemilik_id" aria-label="Pemilik Kost">
-                    <option selected>Pilih Pemilik Kost</option>
-                    @foreach ($pemiliks as $pemilik)
-                        <option value="{{ $pemilik->id }}">{{ $pemilik->nama_pemilik }}</option>
-                    @endforeach
-                </select>
-                </div>
-                <div class="form-group mb-3">
                     <label for="nama_kosan" class="form-label">Nama Kost</label>
                     <input type="text" class="form-control @error('nama_kosan') 'is-invalid' @enderror" id="nama_kosan" name="nama_kosan" placeholder="masukkan nama kost" required value="{{ old('nama_kosan') }}" autofocus>
                     @error('nama_kosan')
@@ -86,7 +77,7 @@
                         <option value="Putra/Putri">Putra/Putri</option>
                     </select>
                 </div>
-                <div class="form-group mb-3">
+                <!-- <div class="form-group mb-3">
                     <label for="foto" class="form-label">Foto Kost</label>
                     <img class="img-preview img-fluid mb-2 col-sm-5">
                     <input class="form-control @error('foto') 'is-invalid' @enderror" type="file" id="foto" name="foto" onchange="previewImage()">
@@ -95,7 +86,7 @@
                             {{ $message }}
                         </div>
                     @enderror
-                </div>
+                </div> -->
                 <div class="form-group mb-3">
                     <label for="deskripsi">Deskripsi Kost</label>
                     <input id="deskripsi" type="hidden" name="deskripsi" value="{{ old('deskripsi') }}">

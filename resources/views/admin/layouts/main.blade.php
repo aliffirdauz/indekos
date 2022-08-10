@@ -19,11 +19,12 @@
       src="https://kit.fontawesome.com/32f82e1dca.js"
       crossorigin="anonymous"
     ></script>
-
     <link rel="stylesheet" type="text/css" href="/css/trix.css">
+   
     <script type="text/javascript" src="/js/trix.js"></script>
   </head>
   <body>
+    
     @include('admin.partials.navbar')
 
     @yield('content')
@@ -34,5 +35,6 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+
   </body>
 </html>

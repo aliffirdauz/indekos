@@ -18,9 +18,9 @@
             <div class="col-md-3 mb-3">
               <div class="product-card">
                 @if ($kosan->foto)
-                  <img src="{{ asset('storage/' . $kosan->foto) }}" alt="{{ $kosan->foto }}" class="img-fluid"  width="260" height="180">
+                  <img src="{{ asset('assets/images'.'/'. $kosan->foto) }}" alt="Foto Kosan" class="img-fluid"  width="1024" height="768">
                 @else
-                  <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="260" height="180">
+                  <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="1024" height="768">
                 @endif
                 <div class="product-detail pt-3">
                   <div>

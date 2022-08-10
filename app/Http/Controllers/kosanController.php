@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\foto_kosan;
 use App\Models\Kosan;
 use App\Models\Pemilik;
 use Illuminate\Http\Request;
@@ -17,7 +18,6 @@ class kosanController extends Controller
     {
         return view('user.home.index', [
             'kosans' => Kosan::latest()->paginate(12),
-            'pemiliks' => Pemilik::all()
         ]);
     }
 
@@ -50,9 +50,10 @@ class kosanController extends Controller
      */
     public function show($nama_kosan)
     {
+        $kosan = Kosan::where('nama_kosan', $nama_kosan)->first();
         return view('user.home.show', [
             'kosans' => Kosan::where('nama_kosan', $nama_kosan)->first(),
-            'pemiliks' => Pemilik::all()
+            'fotos' => foto_kosan::where('kosan_id', $kosan->id)->get()
         ]);
        
     }
