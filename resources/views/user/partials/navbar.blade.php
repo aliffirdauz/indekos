@@ -1,4 +1,20 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top mediumnavigation">
+  <nav class="navbar fixed-bottom bg-light">
+    <div class="container-fluid">
+      <section id="topbar" class="d-none d-lg-block">
+        <div class="container d-flex">
+          <div class="container">
+            <ul class="navbar-nav">
+              <li class="nav-item"> Hubungi kami </li>
+              <li class="nav-item">  || <i class="bi bi-envelope"></i>   <a href="#">cdc@itenas.ac.id</a>   </li>
+              <li class="nav-item">  || <i class="bi bi-telephone"></i>    +62-22-7272215 (ext.235) ||   </li>
+              <li class="nav-item">   <i class="bi bi-clock"></i>    Mon-Fri 8am - 5pm    </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </nav>
   <div class="container">
     <!-- Begin Logo -->
     <a class="navbar-brand" href="/">
