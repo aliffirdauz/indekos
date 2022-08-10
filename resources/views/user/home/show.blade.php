@@ -38,7 +38,6 @@
         <h5><i class="bi bi-house-door"></i>    Maks. {{$kosans->kapasitas}} orang/kamar</h5>
         <h4 class="mt-4">Deskripsi</h4>
         <p>{!! $kosans->deskripsi !!}</p>
-        <h4>Pemilik Kosan</h4>
         <h4 class="mt-4">Fasilitas Kamar</h4>
         <p>{!! $kosans->fasilitas_kamar !!}</p>
         <h4 class="mt-4">Fasilitas Kamar Mandi</h4>
