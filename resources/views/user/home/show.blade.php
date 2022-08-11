@@ -42,7 +42,7 @@
         <h5><i class="bi bi-geo-alt"></i>   {{$kosans->alamat}}</h5>
         <h5><i class="bi bi-tags"></i>    Rp.{{number_format($kosans->harga)}}/bulan</h5>
         <h5><i class="bi bi-people"></i>    {{$kosans->jenis}}</h5>
-        <h5><i class="bi bi-house-door"></i>    Maks. {{$kosans->kapasitas}} orang/kamar</h5>
+        <h5><i class="bi bi-house-door"></i>    Tersedia {{$kosans->kapasitas}} kamar</h5>
         <h4 class="mt-4">Deskripsi</h4>
         <p>{!! $kosans->deskripsi !!}</p>
         <h4 class="mt-4">Fasilitas Kamar</h4>
