@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use PD0;
 
 use App\Models\foto_kosan;
 use App\Models\Kosan;
