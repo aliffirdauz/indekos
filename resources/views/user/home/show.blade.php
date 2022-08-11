@@ -18,7 +18,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             @if ($kosans->foto)
-              <img src="{{ asset('assets/images'.'/'. $kosans->foto) }}" alt="Foto Kosan" class="img-fluid"  width="2048" height="768">
+              <img src="{{ asset('assets/images'.'/'. $kosans->foto) }}" alt="Foto Kosan" class="img-fluid"">
             @else
               <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="2048" height="768">
             @endif

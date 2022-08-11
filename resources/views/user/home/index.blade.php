@@ -18,7 +18,8 @@
             <div class="col-md-3 mb-3">
               <div class="product-card">
                 @if ($kosan->foto)
-                  <img src="{{ asset('assets/images'.'/'. $kosan->foto) }}" alt="Foto Kosan" class="img-fluid"  width="2048" height="768">
+                  <img src="{{ asset('assets/images'.'/'. $kosan->foto) }}" alt="Foto Kosan" class="img-fluid"
+                    style="width: 100%; height: 200px;">
                 @else
                   <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="2048" height="768">
                 @endif

@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kosan;
-use App\Models\Pemilik;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\foto_kosan;
 
