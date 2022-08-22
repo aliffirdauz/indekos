@@ -15,11 +15,19 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->foreignId('kosan_id')->nullable();
+            $table->string('nama');
+            $table->string('nim')->unique();
+            $table->enum('jenis_kelamin', ['L', 'P']);
+            $table->string('asal_pt');
+            $table->string('prodi');
+            $table->string('alamat_asal');
+            $table->string('no_telp')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->enum('role', ['admin', 'user']);
             $table->timestamps();
         });
     }
