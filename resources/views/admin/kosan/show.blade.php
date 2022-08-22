@@ -18,9 +18,9 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             @if ($kosans->foto)
-              <img src="{{ asset('assets/images'.'/'. $kosans->foto) }}" alt="Foto Kosan" class="img-fluid"  width="2048" height="768">
+              <img src="{{ asset('assets/images'.'/'. $kosans->foto) }}" alt="Foto Kosan" class="d-block w-100 img-fluid">
             @else
-              <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="2048" height="768">
+              <img src="https://source.unsplash.com/260x180?house" alt="..." class="d-block w-100 img-fluid">
             @endif
           </div>
           @foreach ($fotos as $f)
@@ -41,7 +41,6 @@
         <h1>{{$kosans->nama_kosan}}</h1>
         <h5><i class="bi bi-geo-alt"></i>   {{$kosans->alamat}}</h5>
         <h5><i class="bi bi-tags"></i>    Rp.{{number_format($kosans->harga)}}/bulan</h5>
-        <h5><i class="bi bi-geo"></i>    {{$kosans->jarak}}m</h5>
         <h5><i class="bi bi-people"></i>    {{$kosans->jenis}}</h5>
         <h5><i class="bi bi-house-door"></i>    Tersedia {{$kosans->kapasitas}} kamar</h5>
         <h4 class="mt-4">Deskripsi</h4>
@@ -52,11 +51,10 @@
         <p>{!! $kosans->fasilitas_kamar_mandi !!}</p>
         <h4 class="mt-4">Fasilitas Umum</h4>
         <p>{!! $kosans->fasilitas_umum !!}</p>
-        <h4 class="mt-4">Fasilitas Parkir</h4>
+        <h4 class="mt-4">Fasilitas Parikir</h4>
         <p>{!! $kosans->fasilitas_parkir !!}</p>
         <h4 class="mt-4">Peraturan</h4>
         <p>{!! $kosans->peraturan !!}</p>
-        <a class="btn btn-primary" href="{{$kosans->gform}}">Pesan Kamar</a>
       </div>
     </section>
 

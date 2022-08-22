@@ -28,10 +28,10 @@
 
       <section class="d-flex flex-column gap-4">
         <div class="d-flex justify-content-between align-items-center gap-3">
-          <h4 class="title-section-content">Daftar Kost</h4>
-          <a class="btn btn-primary" href="/admin/create">
+          <h4 class="title-section-content">Daftar User</h4>
+          <a class="btn btn-primary" href="/admin/userlist/create">
             <i class="bi bi-plus-circle"></i>
-            Tambah Kost
+            Tambah User
           </a>
         </div>
         <div class="d-flex justify-content-center">
@@ -39,28 +39,30 @@
               <thead>
                   <tr>
                       <th>No</th>
-                      <th>Nama Kost</th>
-                      <th>Alamat</th>
-                      <th>Harga</th>
-                      <th>Kamar Kosong</th>
-                      <th>Jenis Kost</th>
+                      <th>Nama</th>
+                      <th>NIM</th>
+                      <th>Jenis Kelamin</th>
+                      <th>Asal Perguruan Tinggi</th>
+                      <th>Program Studi</th>
+                      <th>Alamat Asal</th>
                       <th>Aksi</th>
                   </tr>
               </thead>
               <tbody>
-                @foreach($kosans as $kosan)
+                @foreach($users as $user)
                   <tr>
                       <td>{{$loop->iteration}}</td>
-                      <td>{{$kosan->nama_kosan}}</td>
-                      <td>{{$kosan->alamat}}</td>
-                      <td>{{number_format($kosan->harga)}}</td>
-                      <td>{{$kosan->kapasitas}}</td>
-                      <td>{{$kosan->jenis}}</td>
+                      <td>{{$user->nama}}</td>
+                      <td>{{$user->nim}}</td>
+                      <td>{{$user->jenis_kelamin}}</td>
+                      <td>{{$user->asal_pt}}</td>
+                      <td>{{$user->prodi}}</td>
+                      <td>{{$user->alamat_asal}}</td>
                       <td class="text-center fs-5">
-                      <a href="/admin/show/{{$kosan->nama_kosan}}" class="badge rounded-pill text-bg-primary"><i class="bi bi-eye-fill"></i></a>
-                      <a href="/upload/{{$kosan->id}}" class="badge rounded-pill text-bg-primary"><i class="bi bi-upload"></i></a>
-                      <a href="/admin/{{$kosan->id}}/edit" class="badge rounded-pill text-bg-warning"><i class="bi bi-pencil-square"></i></a>
-                      <form action="/admin/{{$kosan->id}}" method="POST">
+                      <a href="/admin/show/{{$user->nama}}" class="badge rounded-pill text-bg-primary"><i class="bi bi-eye-fill"></i></a>
+                      <a href="/upload/{{$user->id}}" class="badge rounded-pill text-bg-primary"><i class="bi bi-upload"></i></a>
+                      <a href="/admin/{{$user->id}}/edit" class="badge rounded-pill text-bg-warning"><i class="bi bi-pencil-square"></i></a>
+                      <form action="/admin/{{$user->id}}" method="POST">
                         @csrf
                         @method('delete')
                         <button type="submit" class="badge rounded-pill text-bg-danger border-0" onclick="return confirm('Yakin hapus data?');"><i class="bi bi-trash-fill"></i></button>

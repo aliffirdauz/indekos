@@ -4,7 +4,7 @@
   <!-- Begin Site Title -->
   <div class="container">
     <div class="mainheading">
-      <h1 class="sitetitle">Sistem Informasi Indekos Dekat ITENAS</h1>
+      <h1 class="title-section-content">Sistem Informasi Indekos Dekat ITENAS</h1>
     </div>
     <!-- End Site Title -->
 
@@ -24,9 +24,13 @@
                   <img src="https://source.unsplash.com/260x180?house" alt="{{ $kosan->foto }}" class="img-fluid" width="2048" height="768">
                 @endif
                 <div class="product-detail pt-3">
-                  <div>
-                    <p class="label-detail mb-1">Kost {{$kosan->jenis}}</p>
+                  <div class="text-limit">
+                    <div class="d-flex justify-content-between">
+                      <p class="label-detail mb-1"><i class="bi bi-geo"></i> {{$kosan->jarak}}m</p>
+                      <p class="label-detail mb-1"><i class="bi bi-people"></i> Kost {{$kosan->jenis}}</p>
+                    </div>
                     <p class="title-detail">{{$kosan->nama_kosan}}</p>
+                    <p class="label-detail">{{$kosan->deskripsi}}</p>
                   </div>
                 </div>
                 <div class="product-detail pt-4">

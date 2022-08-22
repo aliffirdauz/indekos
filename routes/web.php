@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\kosanController;
 use Illuminate\Support\Facades\Route;
@@ -15,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/post/{nama_kosan}', [kosanController::class, 'show']);
-Route::resource('/', kosanController::class)->scoped(['kosan' => 'nama_kosan']);
-Route::resource('/admin', adminController::class);
+Route::get('/admin/show/{nama_kosan}', [adminController::class, 'show']);
+Route::resource('/admin', adminController::class)->scoped(['kosans' => 'nama_kosan']);
 Route::get('/upload/{id}', [adminController::class, 'upload_image']);
 Route::post('/store_image/{id}', [adminController::class, 'store_image']);
+Route::get('/admin/userlist/index', [userController::class, 'index']);
+Route::get('/admin/userlist/create', [userController::class, 'create']);
+Route::post('/admin/userlist/store', [userController::class, 'store']);
+Route::resource('/', kosanController::class)->scoped(['kosan' => 'nama_kosan']);
+Route::get('/post/{nama_kosan}', [kosanController::class, 'show']);

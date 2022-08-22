@@ -1,18 +1,12 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top mediumnavigation">
-  <nav class="navbar fixed-bottom bg-light">
-    <div class="container-fluid">
-      <section id="topbar" class="d-none d-lg-block">
-        <div class="container d-flex">
-          <div class="container">
-            <ul class="navbar-nav">
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <div class="d-flex justify-content-center container">
+      <ul class="navbar-nav">
               <li class="nav-item"> Hubungi kami </li>
               <li class="nav-item">  || <i class="bi bi-envelope"></i>   <a href="#">cdc@itenas.ac.id</a>   </li>
-              <li class="nav-item">  || <i class="bi bi-telephone"></i>    +62-22-7272215 (ext.235) ||   </li>
-              <li class="nav-item">   <i class="bi bi-clock"></i>    Mon-Fri 8am - 5pm    </li>
+              <li class="nav-item">  || <i class="bi bi-telephone"></i>    +62-22-7272215 (ext.235)   </li>
+              <li class="nav-item">  || <i class="bi bi-clock"></i>    Mon-Fri 8am - 5pm    </li>
             </ul>
-          </div>
-        </div>
-      </section>
     </div>
   </nav>
   <div class="container">
@@ -21,8 +15,16 @@
       <img src="/assets/img/logos.png" alt="logo">
     </a>
     <!-- End Logo -->
-    <div class="d-flex gap-3 align-items-center mb-4">
-      <img src="/assets/icons/ic_mode.svg" alt="Mode Display" />
+    <div class="d-flex gap-3 align-items-center mb-2 mt-3">
+      @auth
+        <form action="/logout" method="POST">
+          @csrf
+          <button type="submit" class="btn btn-primary">Logout</button>
+        </form>
+        <a class="btn btn-primary" href="/admin">Administrator</a>
+      @else
+        <a class="btn btn-primary" href="/login">Login</a>
+      @endauth
       <p id="label-mode" class="flex-fill label-mode">Light Mode</p>
       <div>
         <input

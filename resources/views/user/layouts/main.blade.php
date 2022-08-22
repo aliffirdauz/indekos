@@ -36,6 +36,13 @@
     body {
       background-color: #f8f9fd;
     }
+    .text-limit {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
   </style>
 
 </head>

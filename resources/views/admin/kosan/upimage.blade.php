@@ -39,11 +39,10 @@
 
         <section class="d-flex flex-column gap-4">
             <div class="d-flex justify-content-between align-items-center gap-3">
-                <h4 class="title-section-content">Tambah Kost</h4>
+                <h4 class="title-section-content">Unggah Foto Kost</h4>
             </div>
                 @csrf
                 <div class="form-group mb-3">
-                <label for="pemilik_id" class="form-label">Unggah Foto</label>
                         <div id="dropzone">
                             <form action="/store_image/{{$kosan_id}}" class="dropzone"
                                 id="file-upload" enctype="multipart/form-data">

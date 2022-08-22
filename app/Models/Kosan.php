@@ -12,9 +12,4 @@ class Kosan extends Model
     protected $table = 'kosans';
     protected $guarded = [];
     protected $primaryKey = 'id';
-
-    public function pemilik()
-    {
-        return $this->belongsTo(Pemilik::class);
-    }
 }
