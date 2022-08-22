@@ -38,12 +38,7 @@
                     <p class="label-detail mb-1">Harga:</p>
                     <p class="price-detail">Rp {{number_format($kosan->harga)}}/bulan</p>
                   </div>
-                  <button
-                    class="buy-product button btn-rounded active"
-                    onclick="handleBuy(this)"
-                  >
-                    <a href="/post/{{$kosan->nama_kosan}}" class="text-white text-decoration-none">Lihat</a>
-                  </button>
+                  <a href="/post/{{$kosan->nama_kosan}}" class="buy-product button btn-rounded active text-white text-decoration-none" onclick="handleBuy(this)">Lihat</a>
                 </div>
               </div>
             </div>
