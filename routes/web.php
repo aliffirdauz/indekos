@@ -25,10 +25,13 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/admin/userlist/index', [userController::class, 'index']);
     Route::get('/admin/userlist/create', [userController::class, 'create']);
     Route::post('/admin/userlist/store', [userController::class, 'store']);
+    Route::put('/post/{nama_kosan}', [kosanController::class, 'book']);
+    Route::delete('/post/unbook/{kosan}', [kosanController::class, 'unbook']);
+    Route::get('/post/{nama_kosan}', [kosanController::class, 'show']);
 });
 
 Route::resource('/', kosanController::class)->scoped(['kosan' => 'nama_kosan']);
-Route::get('/post/{nama_kosan}', [kosanController::class, 'show']);
+
 
 Auth::routes();
 

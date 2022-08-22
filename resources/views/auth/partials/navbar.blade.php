@@ -16,7 +16,7 @@
     </a>
     <!-- End Logo -->
     <div class="d-flex gap-3 align-items-center mb-2 mt-3">
-      <a class="btn btn-primary" href="/register">Login</a>
+      <a class="btn btn-primary" href="/login">Login</a>
       <a class="btn btn-primary" href="/register">Register</a>
       <p id="label-mode" class="flex-fill label-mode">Light Mode</p>
       <div>
