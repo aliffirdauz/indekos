@@ -37,7 +37,7 @@ Route::middleware(['admin'])->group(function() {
     Route::delete('/admin/userlist/{id}', [userController::class, 'destroy']);
 });
 
-Route::resource('/', kosanController::class)->scoped(['kosan' => 'nama_kosan']);
+Route::resource('/', kosanController::class)->scoped(['kosan' => 'nama_kosan'])->except(['create', 'store', 'edit', 'update', 'destroy']);
 
 
 Auth::routes();

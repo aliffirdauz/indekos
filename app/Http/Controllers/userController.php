@@ -41,12 +41,12 @@ class userController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required',
-            'nim' => 'required',
+            'nim' => ['required', 'unique:users'],
             'jenis_kelamin' => 'required',
             'asal_pt' => 'required',
             'prodi' => 'required',
             'alamat_asal' => 'required',
-            'no_telp' => 'required',
+            'no_telp' => ['required', 'unique:users'],
             'email' => ['required', 'email', 'unique:users'],
             'password' => ['required', 'min:8', 'max:255'],
             'role' => 'required'
@@ -105,9 +105,9 @@ class userController extends Controller
             'role' => 'required'
         ];
 
-        if($request->nama != $mhsw->nama) {
-            $rules['nama'] = 'unique:users';
-        }
+        // if($request->nama != $mhsw->nama) {
+        //     $rules['nama'] = 'unique:users';
+        // }
 
         $validatedData = $request->validate($rules);
 

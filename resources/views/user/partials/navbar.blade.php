@@ -17,13 +17,13 @@
     <!-- End Logo -->
     <div class="d-flex gap-3 align-items-center mb-2 mt-3">
       @auth
+        @can('admin')
+          <a class="btn btn-primary" href="/admin">Admin</a>
+        @endcan
         <form action="/logout" method="POST">
           @csrf
           <button type="submit" class="btn btn-primary">Logout</button>
         </form>
-        @can('admin')
-          <a class="btn btn-primary" href="/admin">Administrator</a>
-        @endcan
       @else
         <a class="btn btn-primary" href="/login">Login</a>
       @endauth
