@@ -21,7 +21,9 @@
           @csrf
           <button type="submit" class="btn btn-primary">Logout</button>
         </form>
-        <a class="btn btn-primary" href="/admin">Administrator</a>
+        @can('admin')
+          <a class="btn btn-primary" href="/admin">Administrator</a>
+        @endcan
       @else
         <a class="btn btn-primary" href="/login">Login</a>
       @endauth

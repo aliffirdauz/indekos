@@ -16,8 +16,11 @@
     </a>
     <!-- End Logo -->
     <div class="d-flex gap-3 align-items-center mb-2 mt-3">
-      <a class="btn btn-primary" href="/login">Login</a>
-      <a class="btn btn-primary" href="/register">Register</a>
+      @if(Route::currentRouteName() == 'login')
+        <a class="btn btn-primary" href="/register">Register</a>
+      @else
+        <a class="btn btn-primary" href="/login">Login</a>
+      @endif
       <p id="label-mode" class="flex-fill label-mode">Light Mode</p>
       <div>
         <input

@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::middleware(['auth'])->group(function() {
+    Route::put('/post/{nama_kosan}', [kosanController::class, 'book']);
+    Route::delete('/post/unbook/{kosan}', [kosanController::class, 'unbook']);
+    Route::get('/post/{nama_kosan}', [kosanController::class, 'show']);
+});
+
+Route::middleware(['admin'])->group(function() {
     Route::get('/admin/show/{nama_kosan}', [adminController::class, 'show']);
     Route::resource('/admin', adminController::class)->scoped(['kosans' => 'nama_kosan']);
     Route::get('/upload/{id}', [adminController::class, 'upload_image']);
@@ -29,9 +35,6 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/admin/userlist/{id}/edit', [userController::class, 'edit']);
     Route::put('/admin/userlist/{id}', [userController::class, 'update']);
     Route::delete('/admin/userlist/{id}', [userController::class, 'destroy']);
-    Route::put('/post/{nama_kosan}', [kosanController::class, 'book']);
-    Route::delete('/post/unbook/{kosan}', [kosanController::class, 'unbook']);
-    Route::get('/post/{nama_kosan}', [kosanController::class, 'show']);
 });
 
 Route::resource('/', kosanController::class)->scoped(['kosan' => 'nama_kosan']);
