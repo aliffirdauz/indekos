@@ -87,7 +87,7 @@
                 <div>
                   <a class="btn btn-secondary mt-3 me-2" href="/">Kembali</a>
                   <button type="submit" value="submit" class="btn btn-primary mt-3" disabled>Pesan Kamar</button>
-                  <p>Anda telah memesan kamar lain, mohon batalkan pesanan anda terlebih dahulu.</p>
+                  <p class="text-danger mt-2">Perhatian : Anda telah memesan kamar lain, mohon batalkan pesanan anda terlebih dahulu.</p>
                 </div>
               @endif
             @else 

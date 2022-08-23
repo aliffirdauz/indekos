@@ -63,9 +63,11 @@ class userController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($nama)
     {
-        //
+        return view('admin.userlist.show', [
+            'user' => User::where('nama', $nama)->first()
+        ]);
     }
 
     /**
@@ -74,9 +76,10 @@ class userController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+        $mhsw = User::find($id);
+        return view('admin.userlist.edit', compact('mhsw'));
     }
 
     /**
@@ -86,9 +89,33 @@ class userController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update($id, Request $request)
     {
-        //
+        $mhsw = User::find($id);
+        $rules = [
+            'nama' => 'required',
+            'nim' => 'required',
+            'jenis_kelamin' => 'required',
+            'asal_pt' => 'required',
+            'prodi' => 'required',
+            'alamat_asal' => 'required',
+            'no_telp' => 'required',
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:8', 'max:255'],
+            'role' => 'required'
+        ];
+
+        if($request->nama != $mhsw->nama) {
+            $rules['nama'] = 'unique:users';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        User::where('id', $mhsw->id)->update($validatedData);
+
+        return redirect('/admin/userlist/index')->with('success', 'Data Kost berhasil diubah!');
     }
 
     /**
@@ -97,8 +124,10 @@ class userController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $mhsw = User::find($id);
+        $mhsw->delete();
+        return redirect('/admin/userlist/index')->with('success', 'Data Kost berhasil dihapus!');
     }
 }

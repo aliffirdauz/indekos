@@ -25,6 +25,10 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/admin/userlist/index', [userController::class, 'index']);
     Route::get('/admin/userlist/create', [userController::class, 'create']);
     Route::post('/admin/userlist/store', [userController::class, 'store']);
+    Route::get('/admin/userlist/{nama}', [userController::class, 'show']);
+    Route::get('/admin/userlist/{id}/edit', [userController::class, 'edit']);
+    Route::put('/admin/userlist/{id}', [userController::class, 'update']);
+    Route::delete('/admin/userlist/{id}', [userController::class, 'destroy']);
     Route::put('/post/{nama_kosan}', [kosanController::class, 'book']);
     Route::delete('/post/unbook/{kosan}', [kosanController::class, 'unbook']);
     Route::get('/post/{nama_kosan}', [kosanController::class, 'show']);

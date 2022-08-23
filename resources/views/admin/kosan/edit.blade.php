@@ -74,9 +74,15 @@
                     <select class="form-select" name="jenis" aria-label="Jenis Kost">
                         @if (old('jenis', $kosans->jenis) == "Putra")
                             <option value="Putra" selected>Putra</option>
+                            <option value="Putri">Putri</option>
+                            <option value="Putra/Putri">Putra/Putri</option>
                         @elseif (old('jenis', $kosans->jenis) == "Putri")
+                            <option value="Putra">Putra</option>
                             <option value="Putri" selected>Putri</option>
+                            <option value="Putra/Putri">Putra/Putri</option>
                         @else
+                            <option value="Putra">Putra</option>
+                            <option value="Putri" selected>Putri</option>
                             <option value="Putra/Putri" selected>Putra/Putri</option>
                         @endif
                     </select>

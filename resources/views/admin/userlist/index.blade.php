@@ -59,10 +59,9 @@
                       <td>{{$user->prodi}}</td>
                       <td>{{$user->alamat_asal}}</td>
                       <td class="text-center fs-5">
-                      <a href="/admin/show/{{$user->nama}}" class="badge rounded-pill text-bg-primary"><i class="bi bi-eye-fill"></i></a>
-                      <a href="/upload/{{$user->id}}" class="badge rounded-pill text-bg-primary"><i class="bi bi-upload"></i></a>
-                      <a href="/admin/{{$user->id}}/edit" class="badge rounded-pill text-bg-warning"><i class="bi bi-pencil-square"></i></a>
-                      <form action="/admin/{{$user->id}}" method="POST">
+                      <a href="/admin/userlist/{{$user->nama}}" class="badge rounded-pill text-bg-primary"><i class="bi bi-eye-fill"></i></a>
+                      <a href="/admin/userlist/{{$user->id}}/edit" class="badge rounded-pill text-bg-warning"><i class="bi bi-pencil-square"></i></a>
+                      <form action="/admin/userlist/{{$user->id}}" method="POST">
                         @csrf
                         @method('delete')
                         <button type="submit" class="badge rounded-pill text-bg-danger border-0" onclick="return confirm('Yakin hapus data?');"><i class="bi bi-trash-fill"></i></button>
