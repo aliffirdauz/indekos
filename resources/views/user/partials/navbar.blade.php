@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top mediumnavigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
   <nav class="navbar fixed-bottom navbar-light bg-light">
     <div class="d-flex justify-content-center container">
       <ul class="navbar-nav">
@@ -9,7 +9,7 @@
             </ul>
     </div>
   </nav>
-  <div class="container">
+  <div class="container mediumnavigation">
     <!-- Begin Logo -->
     <a class="navbar-brand" href="/">
       <img src="/assets/img/logos.png" alt="logo">
@@ -27,8 +27,8 @@
       @else
         <a class="btn btn-primary" href="/login">Login</a>
       @endauth
-      <p id="label-mode" class="flex-fill label-mode">Light Mode</p>
-      <div>
+      <!-- <p id="label-mode" class="flex-fill label-mode">Light Mode</p> -->
+      <!-- <div>
         <input
           id="checkbox"
           type="checkbox"
@@ -51,7 +51,7 @@
             alt="Icon Light"
           />
         </label>
-      </div>
+      </div> -->
     </div>
   </div>
 </nav>

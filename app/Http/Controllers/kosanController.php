@@ -131,6 +131,6 @@ class kosanController extends Controller
         Kosan::where('id', $kosan->id)->update([
             'kapasitas' => $kosan->kapasitas + 1
         ]);
-        return redirect('/')->with('success', 'Kamar berhasil dibatalkan!');
+        return redirect('/')->with('success', 'Pesanan kamar berhasil dibatalkan!');
     }
 }
