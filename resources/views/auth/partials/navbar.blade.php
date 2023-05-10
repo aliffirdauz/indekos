@@ -21,7 +21,7 @@
       @else
         <a class="btn btn-primary" href="/login">Login</a>
       @endif
-      <p id="label-mode" class="flex-fill label-mode">Light Mode</p>
+      {{-- <p id="label-mode" class="flex-fill label-mode">Light Mode</p>
       <div>
         <input
           id="checkbox"
@@ -45,7 +45,7 @@
             alt="Icon Light"
           />
         </label>
-      </div>
+      </div> --}}
     </div>
   </div>
 </nav>

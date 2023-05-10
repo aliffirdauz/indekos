@@ -9,7 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Kosan extends Model
 {
     use HasFactory;
-    protected $table = 'kosans';
-    protected $guarded = [];
-    protected $primaryKey = 'id';
+    protected $guarded = ['id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

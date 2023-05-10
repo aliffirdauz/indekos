@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('harga');
             $table->string('kapasitas');
             $table->string('jenis');
+            $table->integer('jarak');
             $table->string('foto')->nullable();
             $table->string('deskripsi');
             $table->string('fasilitas_kamar');

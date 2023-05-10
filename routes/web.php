@@ -3,6 +3,7 @@
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\kosanController;
+use App\Http\Controllers\pemesananController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,6 +29,7 @@ Route::middleware(['admin'])->group(function() {
     Route::resource('/admin', adminController::class)->scoped(['kosans' => 'nama_kosan']);
     Route::get('/upload/{id}', [adminController::class, 'upload_image']);
     Route::post('/store_image/{id}', [adminController::class, 'store_image']);
+    
     Route::get('/admin/userlist/index', [userController::class, 'index']);
     Route::get('/admin/userlist/create', [userController::class, 'create']);
     Route::post('/admin/userlist/store', [userController::class, 'store']);
@@ -35,6 +37,8 @@ Route::middleware(['admin'])->group(function() {
     Route::get('/admin/userlist/{id}/edit', [userController::class, 'edit']);
     Route::put('/admin/userlist/{id}', [userController::class, 'update']);
     Route::delete('/admin/userlist/{id}', [userController::class, 'destroy']);
+    
+    Route::get('/admin/pemesanan/index', [pemesananController::class, 'index']);
 });
 
 Route::resource('/', kosanController::class)->scoped(['kosan' => 'nama_kosan'])->except(['create', 'store', 'edit', 'update', 'destroy']);

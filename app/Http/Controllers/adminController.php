@@ -6,6 +6,7 @@ use App\Models\Kosan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\foto_kosan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class adminController extends Controller
@@ -77,7 +78,8 @@ class adminController extends Controller
     public function show($nama_kosan)
     {
         $kosan = Kosan::where('nama_kosan', $nama_kosan)->first();
-        return view('user.home.show', [
+        return view('admin.kosan.show', [
+            'mhsw' => Auth::user(),
             'kosans' => Kosan::where('nama_kosan', $nama_kosan)->first(),
             'fotos' => foto_kosan::where('kosan_id', $kosan->id)->get()
         ]);

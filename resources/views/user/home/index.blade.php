@@ -13,7 +13,8 @@
           <h4 class="title-section-content">Daftar Kost</h4>
         </div>
         <div class="d-flex gap-4 flex-wrap">
-          <div class="row row-cols-1 row-cols-md-4 g-4">
+          {{-- <div class="row row-cols-1 row-cols-md-4 g-4"> --}}
+          <div class="row g-4">
             @foreach ($kosans as $kosan)
             <div class="col">
               <div class="card h-100">
